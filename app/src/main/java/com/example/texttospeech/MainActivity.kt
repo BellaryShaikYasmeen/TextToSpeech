@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     lateinit var t1: TextToSpeech
     lateinit var edttext: String
-    lateinit var imgtxt: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -44,9 +43,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.buttonSpeak.setOnClickListener {
             edttext = binding.editText.text.toString()
-            var pitch = binding.seekBarPitch.getProgress() as Float / 50
+            var pitch = binding.seekBarPitch.progress.toFloat()/ 50
             if (pitch < 0.1) pitch = 0.1f
-            var speed = binding.seekBarSpeed.getProgress() as Float / 50
+            var speed = binding.seekBarSpeed.progress.toFloat()/ 50
             if (speed < 0.1) speed = 0.1f
 
             t1.setPitch(pitch)
