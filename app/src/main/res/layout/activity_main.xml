@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    tools:context="com.codinginflow.texttospeechexample.MainActivity">
+    android:padding="16dp">
 
     <EditText
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="49dp"
         android:layout_marginBottom="16dp"
         android:hint="Enter Text" />
 
@@ -47,5 +46,11 @@
         android:layout_gravity="center_horizontal"
         android:enabled="false"
         android:text="Say it!" />
+   <!-- <Button
+        android:id="@+id/speech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="SpeechToText" />-->
 
 </LinearLayout>

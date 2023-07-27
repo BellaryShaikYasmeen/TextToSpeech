@@ -1,5 +1,7 @@
 package com.example.texttospeech
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         t1 = TextToSpeech(applicationContext) { status ->
             if (status === TextToSpeech.SUCCESS) {
                 val result: Int = t1.setLanguage(Locale.GERMAN)
@@ -55,9 +58,16 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, edttext, Toast.LENGTH_LONG).show()
 
         }
+        /*binding.buttonSpeech.setOnClickListener {
+            val intent=Intent(this,SpeechToText::class.java)
+            startActivity(intent)
+        }*/
 
 
     }
+
+
+
 
 
     override fun onPause() {
